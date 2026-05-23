@@ -1079,6 +1079,155 @@ body.cursor-hover .cursor-follower {
 .service-card:hover .service-cta { opacity: 1; transform: translateY(0); }
 
 /* ============================================
+   Pricing Section
+   ============================================ */
+
+.pricing {
+    position: relative;
+    z-index: 1;
+    background: var(--dark);
+}
+
+.pricing-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--gray-light);
+    max-width: 520px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    position: relative;
+    padding: clamp(32px, 3vw, 48px);
+    background: var(--dark-2);
+    border: 1px solid var(--dark-3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: border-color 0.5s ease, transform 0.5s var(--ease-out-expo);
+}
+
+.pricing-card:hover { border-color: rgba(201, 168, 76, 0.2); }
+
+.pricing-card-featured {
+    border-color: rgba(201, 168, 76, 0.25);
+    background: linear-gradient(180deg, rgba(201, 168, 76, 0.04) 0%, var(--dark-2) 40%);
+}
+
+.pricing-card-featured:hover { border-color: rgba(201, 168, 76, 0.45); }
+
+.pricing-card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.pricing-card:hover .pricing-card-glow { opacity: 1; }
+.pricing-card-featured .pricing-card-glow { opacity: 0.5; }
+
+.pricing-card-border {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transition: transform 0.6s var(--ease-out-expo);
+}
+
+.pricing-card:hover .pricing-card-border { transform: scaleX(1); }
+.pricing-card-featured .pricing-card-border { transform: scaleX(1); opacity: 0.6; }
+
+.pricing-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 6px 16px;
+    margin-bottom: 20px;
+}
+
+.pricing-tier {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.pricing-price {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.pricing-currency {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-top: 8px;
+}
+
+.pricing-amount {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+}
+
+.pricing-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--gray-light);
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--dark-3);
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 32px;
+    flex-grow: 1;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--gray-lighter);
+    padding: 8px 0;
+    letter-spacing: 0.02em;
+}
+
+.pricing-features li svg { flex-shrink: 0; }
+
+.pricing-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ============================================
    Big Marquee
    ============================================ */
 
@@ -1674,6 +1823,7 @@ a.contact-info-value:hover { color: var(--gold); }
     .contact-grid { grid-template-columns: 1fr; gap: 60px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
     .nav-cta { display: none; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
 }
 
 @media (max-width: 768px) {
