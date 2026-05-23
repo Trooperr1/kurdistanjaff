@@ -555,6 +555,7 @@ body.cursor-hover .cursor-follower {
 .hero-title-word {
     display: inline-block;
     transform: translateY(120%);
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-title-italic {
@@ -1857,6 +1858,19 @@ a.contact-info-value:hover { color: var(--gold); }
     .about-stats { grid-template-columns: 1fr; text-align: center; }
     .process-timeline { grid-template-columns: 1fr; }
     .testimonial-author { flex-direction: column; text-align: center; }
+}
+
+/* Fallback: if JS hasn't run after 4s, show everything */
+@keyframes fallbackShow {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow, .hero-subtitle, .hero-cta, .hero-scroll-indicator {
+    animation: fallbackShow 0.01s 4s forwards;
+}
+
+.hero-title-word {
+    animation: fallbackShow 0.01s 4s forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
