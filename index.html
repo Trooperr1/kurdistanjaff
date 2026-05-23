@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAFFSTUDIO — Premium Creative Agency</title>
+    <meta name="description" content="JaffStudio is a premium creative agency specializing in Motion Graphics, Branding, and Social Media Management. Elevating brands to extraordinary heights.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-line"></div>
+            <div class="preloader-text">
+                <span class="preloader-brand">JAFFSTUDIO</span>
+                <span class="preloader-tagline">Loading Experience</span>
+            </div>
+            <div class="preloader-counter" id="preloader-counter">0</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">JAFF</span><span class="logo-accent">STUDIO</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link" data-hover="About">About</a>
+                <a href="#services" class="nav-link" data-hover="Services">Services</a>
+                <a href="#work" class="nav-link" data-hover="Work">Work</a>
+                <a href="#contact" class="nav-link" data-hover="Contact">Contact</a>
+            </div>
+            <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-links">
+                <a href="#about" class="mobile-link"><span class="mobile-link-num">01</span><span class="mobile-link-text">About</span></a>
+                <a href="#services" class="mobile-link"><span class="mobile-link-num">02</span><span class="mobile-link-text">Services</span></a>
+                <a href="#work" class="mobile-link"><span class="mobile-link-num">03</span><span class="mobile-link-text">Work</span></a>
+                <a href="#contact" class="mobile-link"><span class="mobile-link-num">04</span><span class="mobile-link-text">Contact</span></a>
+            </div>
+            <div class="mobile-menu-footer">
+                <p>hello@jaffstudio.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="particles"></div>
+            <div class="hero-grid-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span class="hero-eyebrow-line"></span>
+                <span class="hero-eyebrow-text">Premium Creative Agency</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-line"><span class="hero-title-word" data-animation="reveal">We Create</span></span>
+                <span class="hero-title-line"><span class="hero-title-word hero-title-italic" data-animation="reveal">Extraordinary</span></span>
+                <span class="hero-title-line"><span class="hero-title-word" data-animation="reveal">Experiences</span></span>
+            </h1>
+            <p class="hero-subtitle" data-animation="fade-up">
+                Motion Graphics &mdash; Branding &mdash; Social Media
+            </p>
+            <div class="hero-cta" data-animation="fade-up">
+                <a href="#contact" class="btn-primary">
+                    <span class="btn-text">Start a Project</span>
+                    <span class="btn-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#work" class="btn-secondary">View Our Work</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span class="hero-scroll-text">Scroll to explore</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+        <div class="hero-marquee">
+            <div class="marquee-track">
+                <span>Motion Graphics</span>
+                <span class="marquee-dot"></span>
+                <span>Branding</span>
+                <span class="marquee-dot"></span>
+                <span>Social Media</span>
+                <span class="marquee-dot"></span>
+                <span>Motion Graphics</span>
+                <span class="marquee-dot"></span>
+                <span>Branding</span>
+                <span class="marquee-dot"></span>
+                <span>Social Media</span>
+                <span class="marquee-dot"></span>
+                <span>Motion Graphics</span>
+                <span class="marquee-dot"></span>
+                <span>Branding</span>
+                <span class="marquee-dot"></span>
+                <span>Social Media</span>
+                <span class="marquee-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left">
+                    <div class="section-label" data-animation="fade-up">
+                        <span class="section-num">01</span>
+                        <span class="section-label-text">About Us</span>
+                    </div>
+                    <h2 class="about-title" data-animation="reveal-up">
+                        Crafting visual
+                        <em>masterpieces</em>
+                        that transcend
+                        the ordinary
+                    </h2>
+                </div>
+                <div class="about-right">
+                    <p class="about-text" data-animation="fade-up">
+                        At JaffStudio, we don't just design — we architect experiences that resonate with the soul of your brand. Every pixel is intentional. Every motion tells a story. Every strategy is crafted to dominate.
+                    </p>
+                    <p class="about-text" data-animation="fade-up">
+                        We are a collective of visionaries, strategists, and artists who believe that exceptional brands deserve nothing less than perfection. Based in Kurdistan, serving the world.
+                    </p>
+                    <div class="about-stats" data-animation="fade-up">
+                        <div class="stat">
+                            <span class="stat-number" data-count="150">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Global Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-visual">
+            <div class="about-visual-box" data-animation="scale-in">
+                <div class="visual-inner">
+                    <div class="visual-ring"></div>
+                    <div class="visual-ring visual-ring-2"></div>
+                    <div class="visual-ring visual-ring-3"></div>
+                    <span class="visual-text">J</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label" data-animation="fade-up">
+                    <span class="section-num">02</span>
+                    <span class="section-label-text">Our Services</span>
+                </div>
+                <h2 class="section-title" data-animation="reveal-up">
+                    Three pillars of
+                    <em>creative excellence</em>
+                </h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Motion Graphics -->
+                <div class="service-card" data-animation="fade-up" data-service="motion">
+                    <div class="service-card-bg"></div>
+                    <div class="service-number">01</div>
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M6 12L6 36C6 38.2091 7.79086 40 10 40H38C40.2091 40 42 38.2091 42 36V12C42 9.79086 40.2091 8 38 8H10C7.79086 8 6 9.79086 6 12Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M20 18L32 24L20 30V18Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <circle cx="12" cy="14" r="2" fill="currentColor" opacity="0.5"/>
+                            <circle cx="18" cy="14" r="2" fill="currentColor" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Motion<br>Graphics</h3>
+                    <p class="service-desc">
+                        Cinematic animations and motion design that captivate audiences. From brand films to product visualizations — every frame is a work of art.
+                    </p>
+                    <ul class="service-list">
+                        <li>Brand Animation</li>
+                        <li>Explainer Videos</li>
+                        <li>3D Motion Design</li>
+                        <li>Visual Effects</li>
+                        <li>Title Sequences</li>
+                    </ul>
+                    <div class="service-cta">
+                        <span>Explore</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Service 2: Branding -->
+                <div class="service-card" data-animation="fade-up" data-delay="0.1" data-service="branding">
+                    <div class="service-card-bg"></div>
+                    <div class="service-number">02</div>
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L28.9 16.2L42 17.8L32 27.1L34.8 40L24 33.8L13.2 40L16 27.1L6 17.8L19.1 16.2L24 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Brand<br>Identity</h3>
+                    <p class="service-desc">
+                        We build brands that command attention and inspire loyalty. Strategic identity design that positions you at the pinnacle of your industry.
+                    </p>
+                    <ul class="service-list">
+                        <li>Logo Design</li>
+                        <li>Visual Identity Systems</li>
+                        <li>Brand Strategy</li>
+                        <li>Packaging Design</li>
+                        <li>Brand Guidelines</li>
+                    </ul>
+                    <div class="service-cta">
+                        <span>Explore</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Service 3: Social Media -->
+                <div class="service-card" data-animation="fade-up" data-delay="0.2" data-service="social">
+                    <div class="service-card-bg"></div>
+                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="6" y="6" width="36" height="36" rx="8" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="36" cy="12" r="3" fill="currentColor" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Social Media<br>Management</h3>
+                    <p class="service-desc">
+                        Strategic social presence that turns followers into fanatics. Data-driven content strategies that amplify your voice across every platform.
+                    </p>
+                    <ul class="service-list">
+                        <li>Content Strategy</li>
+                        <li>Community Management</li>
+                        <li>Paid Campaigns</li>
+                        <li>Analytics & Growth</li>
+                        <li>Influencer Partnerships</li>
+                    </ul>
+                    <div class="service-cta">
+                        <span>Explore</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section" id="process">
+        <div class="container">
+            <div class="section-header section-header-center">
+                <div class="section-label" data-animation="fade-up">
+                    <span class="section-num">03</span>
+                    <span class="section-label-text">Our Process</span>
+                </div>
+                <h2 class="section-title" data-animation="reveal-up">
+                    From vision to <em>reality</em>
+                </h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step" data-animation="fade-up">
+                    <div class="process-step-num">01</div>
+                    <div class="process-step-line"></div>
+                    <h3>Discovery</h3>
+                    <p>Deep-dive into your brand's DNA. We listen, research, and uncover the essence that makes you unique.</p>
+                </div>
+                <div class="process-step" data-animation="fade-up" data-delay="0.1">
+                    <div class="process-step-num">02</div>
+                    <div class="process-step-line"></div>
+                    <h3>Strategy</h3>
+                    <p>Blueprint for brilliance. We map out every detail, from creative direction to execution timeline.</p>
+                </div>
+                <div class="process-step" data-animation="fade-up" data-delay="0.2">
+                    <div class="process-step-num">03</div>
+                    <div class="process-step-line"></div>
+                    <h3>Creation</h3>
+                    <p>Where magic happens. Our artists and strategists bring your vision to life with meticulous precision.</p>
+                </div>
+                <div class="process-step" data-animation="fade-up" data-delay="0.3">
+                    <div class="process-step-num">04</div>
+                    <div class="process-step-line"></div>
+                    <h3>Launch</h3>
+                    <p>Unleash your brand upon the world. We ensure flawless delivery and measure every impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work / Portfolio Section -->
+    <section class="work section" id="work">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label" data-animation="fade-up">
+                    <span class="section-num">04</span>
+                    <span class="section-label-text">Selected Work</span>
+                </div>
+                <h2 class="section-title" data-animation="reveal-up">
+                    Featured <em>projects</em>
+                </h2>
+            </div>
+            <div class="work-grid">
+                <div class="work-item work-item-large" data-animation="fade-up">
+                    <div class="work-item-inner">
+                        <div class="work-item-bg" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);"></div>
+                        <div class="work-item-content">
+                            <span class="work-category">Motion Graphics</span>
+                            <h3 class="work-title">Ethereal<br>Brand Film</h3>
+                            <p class="work-desc">Cinematic brand story for a luxury fashion house</p>
+                        </div>
+                        <div class="work-item-overlay"></div>
+                    </div>
+                </div>
+                <div class="work-item" data-animation="fade-up" data-delay="0.1">
+                    <div class="work-item-inner">
+                        <div class="work-item-bg" style="background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);"></div>
+                        <div class="work-item-content">
+                            <span class="work-category">Branding</span>
+                            <h3 class="work-title">Aura<br>Identity</h3>
+                            <p class="work-desc">Complete rebrand for a tech startup</p>
+                        </div>
+                        <div class="work-item-overlay"></div>
+                    </div>
+                </div>
+                <div class="work-item" data-animation="fade-up" data-delay="0.2">
+                    <div class="work-item-inner">
+                        <div class="work-item-bg" style="background: linear-gradient(135deg, #834d9b 0%, #d04ed6 100%);"></div>
+                        <div class="work-item-content">
+                            <span class="work-category">Social Media</span>
+                            <h3 class="work-title">Pulse<br>Campaign</h3>
+                            <p class="work-desc">Social strategy that drove 500% growth</p>
+                        </div>
+                        <div class="work-item-overlay"></div>
+                    </div>
+                </div>
+                <div class="work-item work-item-wide" data-animation="fade-up">
+                    <div class="work-item-inner">
+                        <div class="work-item-bg" style="background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #c9a84c 100%);"></div>
+                        <div class="work-item-content">
+                            <span class="work-category">Branding + Motion</span>
+                            <h3 class="work-title">Royal Heritage<br>Collection</h3>
+                            <p class="work-desc">Full creative suite for a luxury heritage brand</p>
+                        </div>
+                        <div class="work-item-overlay"></div>
+                    </div>
+                </div>
+                <div class="work-item" data-animation="fade-up" data-delay="0.1">
+                    <div class="work-item-inner">
+                        <div class="work-item-bg" style="background: linear-gradient(135deg, #1b1b2f 0%, #162447 50%, #e43f5a 100%);"></div>
+                        <div class="work-item-content">
+                            <span class="work-category">Motion Graphics</span>
+                            <h3 class="work-title">Neon<br>Horizons</h3>
+                            <p class="work-desc">Product launch animation series</p>
+                        </div>
+                        <div class="work-item-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header section-header-center">
+                <div class="section-label" data-animation="fade-up">
+                    <span class="section-num">05</span>
+                    <span class="section-label-text">Testimonials</span>
+                </div>
+                <h2 class="section-title" data-animation="reveal-up">
+                    Words from those <em>we've elevated</em>
+                </h2>
+            </div>
+            <div class="testimonials-slider" data-animation="fade-up">
+                <div class="testimonial active" id="testimonial-1">
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">JaffStudio transformed our entire brand presence. Their attention to detail and creative vision is unmatched. Working with them felt like collaborating with artists who truly understand the language of luxury.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div>
+                            <span class="testimonial-name">Sarah Al-Rashid</span>
+                            <span class="testimonial-role">CEO, Aura Technologies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial" id="testimonial-2">
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">The motion graphics they created for our launch campaign were nothing short of cinematic. Every frame was meticulously crafted. Our engagement metrics went through the roof.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <span class="testimonial-name">Marcus Chen</span>
+                            <span class="testimonial-role">Creative Director, Pulse Media</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial" id="testimonial-3">
+                    <div class="testimonial-quote">&ldquo;</div>
+                    <p class="testimonial-text">Their social media strategy didn't just grow our following — it built a community. The content quality is premium, the strategy is razor-sharp, and the results speak for themselves.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">L</div>
+                        <div>
+                            <span class="testimonial-name">Lena Dubois</span>
+                            <span class="testimonial-role">Founder, Maison Éclat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="testimonial-btn active" data-index="0" aria-label="Testimonial 1"></button>
+                    <button class="testimonial-btn" data-index="1" aria-label="Testimonial 2"></button>
+                    <button class="testimonial-btn" data-index="2" aria-label="Testimonial 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <div class="section-label" data-animation="fade-up">
+                        <span class="section-num">06</span>
+                        <span class="section-label-text">Get in Touch</span>
+                    </div>
+                    <h2 class="contact-title" data-animation="reveal-up">
+                        Let's create
+                        something
+                        <em>legendary</em>
+                    </h2>
+                    <p class="contact-text" data-animation="fade-up">
+                        Ready to elevate your brand? We're here to turn your vision into an unforgettable reality.
+                    </p>
+                    <div class="contact-info" data-animation="fade-up">
+                        <div class="contact-info-item">
+                            <span class="contact-info-label">Email</span>
+                            <a href="mailto:hello@jaffstudio.com" class="contact-info-value">hello@jaffstudio.com</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="contact-info-label">Location</span>
+                            <span class="contact-info-value">Kurdistan, Iraq</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="contact-info-label">Follow Us</span>
+                            <div class="contact-socials">
+                                <a href="#" class="social-link" aria-label="Instagram">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="18" cy="6" r="1.5" fill="currentColor"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Behance">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M3 12H10C11.1046 12 12 11.1046 12 10V8C12 6.89543 11.1046 6 10 6H3V12ZM3 12H11C12.1046 12 13 12.8954 13 14V16C13 17.1046 12.1046 18 11 18H3V12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                                        <path d="M16 15H22M16 12C16 9.79086 17.7909 8 20 8C22.2091 8 24 9.79086 24 12V13H16V12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                                        <path d="M15 5H21" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M7 10V17M7 7V7.01M11 17V13C11 11.8954 11.8954 11 13 11C14.1046 11 15 11.8954 15 13V17M11 10V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-right" data-animation="fade-up">
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <select id="service" name="service" class="form-input form-select" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="motion">Motion Graphics</option>
+                                <option value="branding">Branding</option>
+                                <option value="social">Social Media Management</option>
+                                <option value="all">Full Creative Suite</option>
+                            </select>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Tell Us About Your Vision</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Describe your project..." rows="4" required></textarea>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-text">JAFF</span><span class="logo-accent">STUDIO</span>
+                </div>
+                <p class="footer-tagline">Elevating brands beyond imagination</p>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2026 JaffStudio. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
