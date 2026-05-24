@@ -1,41 +1,44 @@
 /* ============================================
-   JAFFSTUDIO — Ultra Minimalist Luxury
-   A single morphing torus knot sculpture
-   in a dark gallery of connected stars
+   JAFFSTUDIO — Premium Cinematic Experience
+   Morphing torus knot sculpture in a dark
+   gallery of connected constellation nodes
    ============================================ */
 
 (function () {
     'use strict';
 
     // ========================================
-    // 1. CORE UI — No dependencies on anything
+    // SECTION 1: CORE UI — No library deps
     // ========================================
 
     // --- PRELOADER ---
     var preloader = document.getElementById('preloader');
-    var preloaderCounter = document.getElementById('preloader-counter');
     var preloaderRing = document.querySelector('.preloader-ring');
     var preloaderRingCircle = preloaderRing ? preloaderRing.querySelector('circle') : null;
+    var preloaderProgress = document.querySelector('.preloader-progress');
 
     document.body.style.overflow = 'hidden';
 
     function runPreloader() {
-        var duration = 2000;
+        var duration = 2200;
         var start = performance.now();
-        var circumference = preloaderRingCircle ? parseFloat(preloaderRingCircle.getAttribute('stroke-dasharray')) || 565.48 : 565.48;
+        var circumference = 565.48;
 
         function update(now) {
             var elapsed = now - start;
-            var progress = Math.min(elapsed / duration, 1);
-            var eased = 1 - Math.pow(1 - progress, 3);
-            var count = Math.floor(eased * 100);
+            var t = Math.min(elapsed / duration, 1);
+            // Cubic ease-out
+            var eased = 1 - Math.pow(1 - t, 3);
+            var percent = Math.floor(eased * 100);
 
-            if (preloaderCounter) preloaderCounter.textContent = count;
             if (preloaderRingCircle) {
                 preloaderRingCircle.style.strokeDashoffset = circumference * (1 - eased);
             }
+            if (preloaderProgress) {
+                preloaderProgress.style.width = percent + '%';
+            }
 
-            if (progress < 1) {
+            if (t < 1) {
                 requestAnimationFrame(update);
             } else {
                 setTimeout(function () {
@@ -59,7 +62,7 @@
     var mobileMenu = document.getElementById('mobile-menu');
 
     window.addEventListener('scroll', function () {
-        if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
     });
 
     if (menuBtn && mobileMenu) {
@@ -70,6 +73,7 @@
         });
     }
 
+    // Close mobile menu on any link click
     document.querySelectorAll('.mobile-link, .nav-link').forEach(function (link) {
         link.addEventListener('click', function () {
             if (menuBtn) menuBtn.classList.remove('active');
@@ -78,7 +82,7 @@
         });
     });
 
-    // Smooth scroll for anchor links
+    // Smooth scroll for anchor links with 80px offset
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -94,7 +98,7 @@
         });
     });
 
-    // --- CUSTOM CURSOR ---
+    // --- CUSTOM CURSOR (pointer: fine only) ---
     var cursor = document.getElementById('cursor');
     var cursorFollower = document.getElementById('cursor-follower');
     var mouseX = 0, mouseY = 0;
@@ -109,15 +113,16 @@
         });
 
         function animateCursor() {
-            followerX += (mouseX - followerX) * 0.09;
-            followerY += (mouseY - followerY) * 0.09;
+            followerX += (mouseX - followerX) * 0.08;
+            followerY += (mouseY - followerY) * 0.08;
             cursorFollower.style.left = followerX + 'px';
             cursorFollower.style.top = followerY + 'px';
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
 
-        document.querySelectorAll('a, button, .glass-card, .work-card, .btn, input, textarea, select').forEach(function (el) {
+        // Add hover class on interactive elements
+        document.querySelectorAll('a, button, .glass-card, .showcase-item, .btn, input, textarea, select').forEach(function (el) {
             el.addEventListener('mouseenter', function () { document.body.classList.add('cursor-hover'); });
             el.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-hover'); });
         });
@@ -149,7 +154,7 @@
         if (testimonials.length === 0) return;
         autoSlideInterval = setInterval(function () {
             showTestimonial((currentTestimonial + 1) % testimonials.length);
-        }, 5000);
+        }, 5500);
     }
 
     if (testimonials.length > 0) startAutoSlide();
@@ -174,12 +179,13 @@
                     if (btn) btn.style.pointerEvents = '';
                     form.reset();
                 }, 2500);
-            }, 1000);
+            }, 1200);
         });
     }
 
     // --- SCROLL OBSERVER ---
     function initScrollObserver() {
+        // Animate elements with data-animation attribute
         var animated = document.querySelectorAll('[data-animation]');
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
@@ -191,7 +197,7 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.12 });
         animated.forEach(function (el) { observer.observe(el); });
 
         // Stat counter animation
@@ -202,8 +208,11 @@
                     var el = entry.target;
                     var target = parseInt(el.dataset.count, 10);
                     var startTime = performance.now();
+                    var counterDuration = 2500;
+
                     function tick(now) {
-                        var progress = Math.min((now - startTime) / 2000, 1);
+                        var progress = Math.min((now - startTime) / counterDuration, 1);
+                        // Cubic ease-out
                         var eased = 1 - Math.pow(1 - progress, 3);
                         el.textContent = Math.floor(eased * target);
                         if (progress < 1) requestAnimationFrame(tick);
@@ -216,11 +225,11 @@
         statNumbers.forEach(function (el) { counterObs.observe(el); });
     }
 
-    // --- MAGNETIC EFFECTS ---
+    // --- MAGNETIC EFFECTS (pointer: fine only) ---
     function initMagneticEffects() {
         if (!window.matchMedia('(pointer: fine)').matches) return;
 
-        // Magnetic buttons
+        // Magnetic buttons — translate by offset * 0.12
         document.querySelectorAll('.btn').forEach(function (btn) {
             btn.addEventListener('mousemove', function (e) {
                 var rect = btn.getBoundingClientRect();
@@ -235,28 +244,28 @@
             });
         });
 
-        // 3D tilt on cards
-        document.querySelectorAll('.glass-card, .work-card').forEach(function (card) {
+        // 3D tilt on cards and showcase items — perspective(1000px) rotateX/Y by offset * 6deg max
+        document.querySelectorAll('.glass-card, .showcase-item').forEach(function (card) {
             card.addEventListener('mousemove', function (e) {
                 var rect = card.getBoundingClientRect();
-                var x = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
-                var y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
-                card.style.transform = 'perspective(800px) rotateY(' + x + 'deg) rotateX(' + (-y) + 'deg)';
+                var x = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
+                var y = ((e.clientY - rect.top) / rect.height - 0.5) * 6;
+                card.style.transform = 'perspective(1000px) rotateY(' + x + 'deg) rotateX(' + (-y) + 'deg)';
             });
             card.addEventListener('mouseleave', function () {
-                card.style.transition = 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+                card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
                 card.style.transform = '';
-                setTimeout(function () { card.style.transition = ''; }, 700);
+                setTimeout(function () { card.style.transition = ''; }, 600);
             });
         });
     }
 
     // ========================================
-    // 2. GSAP ANIMATIONS (if available)
+    // SECTION 2: GSAP ANIMATIONS
     // ========================================
 
     function startAnimations() {
-        if (typeof gsap !== 'undefined') {
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             startGSAPAnimations();
         } else {
             startFallbackAnimations();
@@ -267,57 +276,92 @@
     }
 
     function startGSAPAnimations() {
-        if (typeof ScrollTrigger !== 'undefined') {
-            gsap.registerPlugin(ScrollTrigger);
-        }
+        gsap.registerPlugin(ScrollTrigger);
 
-        // Hero entrance timeline
+        // --- HERO TIMELINE ---
         var tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
 
-        tl.to('.hero-eyebrow', { opacity: 1, duration: 1.2 }, 0)
-          .to('.reveal-word', { y: 0, duration: 1.6, stagger: 0.15 }, 0.3)
-          .to('.hero-subtitle', { opacity: 1, duration: 1.2 }, 0.9)
-          .to('.hero-cta', { opacity: 1, duration: 1.2 }, 1.3);
+        tl.to('.hero-badge', { opacity: 1, y: 0, duration: 1 }, 0);
+        tl.to('.hero-eyebrow', { opacity: 1, duration: 1.2 }, 0.2);
+        tl.from('.hero-eyebrow-line', { scaleX: 0, duration: 0.8 }, 0.3);
+        tl.to('.hero-word', { y: 0, duration: 1.6, stagger: 0.12 }, 0.5);
+        tl.to('.hero-subtitle', { opacity: 1, duration: 1 }, 1.2);
+        tl.from('.hero-sub-word', { y: 15, opacity: 0, duration: 0.8, stagger: 0.1 }, 1.2);
+        tl.to('.hero-cta', { opacity: 1, y: 0, duration: 1 }, 1.5);
+        tl.from('.hero-cta .btn', { y: 20, opacity: 0, duration: 0.8, stagger: 0.12 }, 1.5);
+        tl.to('.hero-scroll-indicator', { opacity: 1, duration: 1 }, 1.8);
+        tl.to('.hero-bottom-bar', { opacity: 1, duration: 1 }, 1.8);
 
-        // Hero parallax on scroll
-        if (typeof ScrollTrigger !== 'undefined') {
-            gsap.to('.hero-content', {
+        // --- HERO PARALLAX ---
+        gsap.to('.hero-content', {
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5
+            },
+            y: 300,
+            opacity: 0
+        });
+
+        gsap.to('.hero-scroll-indicator', {
+            scrollTrigger: {
+                trigger: '.hero',
+                start: '10% top',
+                end: '30% top',
+                scrub: 1
+            },
+            opacity: 0
+        });
+
+        // --- HORIZONTAL SCROLL SHOWCASE (THE KILLER FEATURE) ---
+        var showcase = document.querySelector('.showcase');
+        var track = document.querySelector('.showcase-track');
+        if (showcase && track) {
+            var items = track.querySelectorAll('.showcase-item');
+            var totalScroll = track.scrollWidth - window.innerWidth;
+
+            gsap.to(track, {
+                x: function () { return -totalScroll; },
+                ease: 'none',
                 scrollTrigger: {
-                    trigger: '.hero',
+                    trigger: showcase,
                     start: 'top top',
-                    end: 'bottom top',
-                    scrub: 1.5
-                },
-                y: 200,
-                opacity: 0
-            });
-
-            gsap.to('.hero-scroll-indicator', {
-                scrollTrigger: {
-                    trigger: '.hero',
-                    start: '10% top',
-                    end: '30% top',
-                    scrub: 1
-                },
-                opacity: 0
+                    end: function () { return '+=' + totalScroll; },
+                    pin: true,
+                    scrub: 1,
+                    anticipatePin: 1
+                }
             });
         }
+
+        // --- SECTION PARALLAX on glass cards ---
+        document.querySelectorAll('.glass-card').forEach(function (card) {
+            gsap.from(card, {
+                y: 40,
+                opacity: 0.5,
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    end: 'top 40%',
+                    scrub: 1
+                }
+            });
+        });
     }
 
     function startFallbackAnimations() {
         // Make hero elements visible without GSAP
-        document.querySelectorAll('.reveal-word').forEach(function (w) {
+        document.querySelectorAll('.hero-word').forEach(function (w) {
             w.style.transform = 'translateY(0)';
         });
-        document.querySelectorAll('.hero-eyebrow, .hero-subtitle, .hero-cta').forEach(function (el) {
+        document.querySelectorAll('.hero-eyebrow, .hero-subtitle, .hero-cta, .hero-badge, .hero-bottom-bar').forEach(function (el) {
             el.style.opacity = '1';
         });
     }
 
     // ========================================
-    // 3. THREE.JS SCENE — Wrapped in try-catch
-    //    A morphing torus knot sculpture
-    //    with connected particle constellation
+    // SECTION 3: THREE.JS SCENE
     // ========================================
 
     try {
@@ -345,253 +389,214 @@
         var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
         camera.position.set(0, 0, 6);
 
-        // --- Central geometry: morphing torus knot ---
-        var torusGeo = new THREE.TorusKnotGeometry(1.2, 0.35, 200, 32, 2, 3);
-        var torusMat = new THREE.MeshBasicMaterial({
-            color: 0xc9a84c,
+        // --- Morphing Torus Knot — THE SCULPTURE ---
+        var knotGeo = new THREE.TorusKnotGeometry(1.3, 0.4, 200, 32, 2, 3);
+        var knotMat = new THREE.MeshBasicMaterial({
+            color: 0xc8a750,
             wireframe: true,
             transparent: true,
-            opacity: 0.08
+            opacity: 0.07
         });
-        var torusKnot = new THREE.Mesh(torusGeo, torusMat);
-        scene.add(torusKnot);
+        var knot = new THREE.Mesh(knotGeo, knotMat);
+        scene.add(knot);
+        var origPositions = knotGeo.attributes.position.array.slice();
+        var vertCount = origPositions.length;
 
-        // Store original vertex positions for morphing
-        var originalPositions = torusGeo.attributes.position.array.slice();
-        var vertexCount = originalPositions.length;
+        // --- Outer ring ---
+        var ringGeo = new THREE.TorusGeometry(3.5, 0.005, 8, 128);
+        var ringMat = new THREE.MeshBasicMaterial({
+            color: 0xc8a750,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.03
+        });
+        var ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.x = Math.PI * 0.5;
+        scene.add(ring);
 
-        // --- Particle constellation ---
-        var constellationCount = 120;
-        var constellationRadius = 8;
-        var particles = [];
-        var particlePositions = new Float32Array(constellationCount * 3);
-
-        for (var i = 0; i < constellationCount; i++) {
-            // Random positions on a sphere
+        // --- Particle constellation — 100 nodes with connections ---
+        var nodeCount = 100;
+        var nodes = [], nodeVels = [];
+        for (var i = 0; i < nodeCount; i++) {
             var theta = Math.random() * Math.PI * 2;
             var phi = Math.acos(2 * Math.random() - 1);
-            var r = constellationRadius * Math.cbrt(Math.random());
-            var px = r * Math.sin(phi) * Math.cos(theta);
-            var py = r * Math.sin(phi) * Math.sin(theta);
-            var pz = r * Math.cos(phi);
-
-            particles.push({
-                x: px, y: py, z: pz,
-                vx: (Math.random() - 0.5) * 0.004,
-                vy: (Math.random() - 0.5) * 0.004,
-                vz: (Math.random() - 0.5) * 0.004
+            var r = 4 + Math.random() * 5;
+            nodes.push({
+                x: r * Math.sin(phi) * Math.cos(theta),
+                y: r * Math.sin(phi) * Math.sin(theta),
+                z: r * Math.cos(phi)
             });
-
-            particlePositions[i * 3] = px;
-            particlePositions[i * 3 + 1] = py;
-            particlePositions[i * 3 + 2] = pz;
+            nodeVels.push({
+                x: (Math.random() - 0.5) * 0.002,
+                y: (Math.random() - 0.5) * 0.002,
+                z: (Math.random() - 0.5) * 0.001
+            });
         }
 
-        var particleGeo = new THREE.BufferGeometry();
-        particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
-        var particleMat = new THREE.PointsMaterial({
-            color: 0xc9a84c,
-            size: 0.03,
+        var nodeArr = new Float32Array(nodeCount * 3);
+        var nGeo = new THREE.BufferGeometry();
+        nGeo.setAttribute('position', new THREE.BufferAttribute(nodeArr, 3));
+        var nMat = new THREE.PointsMaterial({
+            color: 0xc8a750,
+            size: 0.025,
             transparent: true,
-            opacity: 0.7,
+            opacity: 0.6,
             sizeAttenuation: true,
             blending: THREE.AdditiveBlending,
             depthWrite: false
         });
-        var particlePoints = new THREE.Points(particleGeo, particleMat);
-        scene.add(particlePoints);
+        scene.add(new THREE.Points(nGeo, nMat));
 
-        // Connection lines between nearby particles
-        var maxConnections = 600;
-        var linePositions = new Float32Array(maxConnections * 6);
-        var lineColors = new Float32Array(maxConnections * 6);
-        var lineGeo = new THREE.BufferGeometry();
-        lineGeo.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-        lineGeo.setAttribute('color', new THREE.BufferAttribute(lineColors, 3));
-        var lineMat = new THREE.LineBasicMaterial({
+        // --- Connection lines ---
+        var maxConn = 400;
+        var lArr = new Float32Array(maxConn * 6);
+        var lCol = new Float32Array(maxConn * 6);
+        var lGeo = new THREE.BufferGeometry();
+        lGeo.setAttribute('position', new THREE.BufferAttribute(lArr, 3));
+        lGeo.setAttribute('color', new THREE.BufferAttribute(lCol, 3));
+        var lMat = new THREE.LineBasicMaterial({
             vertexColors: true,
             transparent: true,
-            opacity: 0.4,
+            opacity: 0.25,
             blending: THREE.AdditiveBlending,
             depthWrite: false
         });
-        var connectionLines = new THREE.LineSegments(lineGeo, lineMat);
-        scene.add(connectionLines);
+        scene.add(new THREE.LineSegments(lGeo, lMat));
 
-        // Gold color components for line vertex colors
-        var goldR = 201 / 255;
-        var goldG = 168 / 255;
-        var goldB = 76 / 255;
-
-        // --- Ambient dust ---
-        var dustCount = 800;
-        var dustPositions = new Float32Array(dustCount * 3);
+        // --- Dust ---
+        var dustCount = 600;
+        var dArr = new Float32Array(dustCount * 3);
         for (var i = 0; i < dustCount; i++) {
-            dustPositions[i * 3] = (Math.random() - 0.5) * 30;
-            dustPositions[i * 3 + 1] = (Math.random() - 0.5) * 30;
-            dustPositions[i * 3 + 2] = (Math.random() - 0.5) * 30;
+            dArr[i * 3] = (Math.random() - 0.5) * 30;
+            dArr[i * 3 + 1] = (Math.random() - 0.5) * 30;
+            dArr[i * 3 + 2] = (Math.random() - 0.5) * 30;
         }
-        var dustGeo = new THREE.BufferGeometry();
-        dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPositions, 3));
-        var dustMat = new THREE.PointsMaterial({
-            color: 0xc9a84c,
-            size: 0.006,
+        var dGeo = new THREE.BufferGeometry();
+        dGeo.setAttribute('position', new THREE.BufferAttribute(dArr, 3));
+        scene.add(new THREE.Points(dGeo, new THREE.PointsMaterial({
+            color: 0xc8a750,
+            size: 0.005,
             transparent: true,
-            opacity: 0.15,
+            opacity: 0.12,
             sizeAttenuation: true,
             blending: THREE.AdditiveBlending,
             depthWrite: false
-        });
-        var dust = new THREE.Points(dustGeo, dustMat);
-        scene.add(dust);
+        })));
 
-        // --- Mouse tracking ---
-        var mouse3d = { x: 0, y: 0 };
-        var targetMouse3d = { x: 0, y: 0 };
-        var mouseWorld = { x: 0, y: 0 };
-
+        // --- Mouse + scroll tracking ---
+        var m = { x: 0, y: 0 }, tm = { x: 0, y: 0 }, mw = { x: 0, y: 0 };
         document.addEventListener('mousemove', function (e) {
-            targetMouse3d.x = (e.clientX / window.innerWidth - 0.5) * 2;
-            targetMouse3d.y = (e.clientY / window.innerHeight - 0.5) * 2;
-            mouseWorld.x = targetMouse3d.x * 6;
-            mouseWorld.y = -targetMouse3d.y * 4;
+            tm.x = (e.clientX / window.innerWidth - 0.5) * 2;
+            tm.y = (e.clientY / window.innerHeight - 0.5) * 2;
+            mw.x = tm.x * 6;
+            mw.y = -tm.y * 5;
         });
 
-        // --- Scroll tracking ---
-        var scrollProgress = 0;
+        var sp = 0;
         window.addEventListener('scroll', function () {
-            var maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
-            scrollProgress = window.scrollY / maxScroll;
+            sp = window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight);
         });
-
-        // --- Connection distance threshold ---
-        var connectionDist = 3.0;
 
         // --- Animation loop ---
         var time = 0;
+        var gR = 200 / 255, gG = 167 / 255, gB = 80 / 255;
 
         function animate() {
             requestAnimationFrame(animate);
-            time += 0.005;
+            time += 0.003;
+            m.x += (tm.x - m.x) * 0.015;
+            m.y += (tm.y - m.y) * 0.015;
 
-            // Smooth mouse interpolation
-            mouse3d.x += (targetMouse3d.x - mouse3d.x) * 0.03;
-            mouse3d.y += (targetMouse3d.y - mouse3d.y) * 0.03;
-
-            // --- Morph the torus knot ---
-            var positions = torusKnot.geometry.attributes.position.array;
-            for (var i = 0; i < vertexCount; i += 3) {
-                var ox = originalPositions[i];
-                var oy = originalPositions[i + 1];
-                var oz = originalPositions[i + 2];
-                var dist = Math.sqrt(ox * ox + oy * oy + oz * oz);
-
-                var displacement = Math.sin(time * 1.2 + dist * 2.5) * 0.12
-                                 + Math.cos(time * 0.7 + dist * 1.8) * 0.06
-                                 + Math.sin(time * 2.0 + dist * 0.5) * 0.03;
-
-                var scale = 1 + displacement;
-                positions[i] = ox * scale;
-                positions[i + 1] = oy * scale;
-                positions[i + 2] = oz * scale;
+            // Morph torus knot vertices
+            var pos = knot.geometry.attributes.position.array;
+            for (var i = 0; i < vertCount; i += 3) {
+                var d = Math.sqrt(origPositions[i] * origPositions[i] + origPositions[i + 1] * origPositions[i + 1] + origPositions[i + 2] * origPositions[i + 2]);
+                var morph = Math.sin(time * 1.2 + d * 2.5) * 0.12 + Math.sin(time * 0.6) * 0.04;
+                pos[i] = origPositions[i] * (1 + morph);
+                pos[i + 1] = origPositions[i + 1] * (1 + morph);
+                pos[i + 2] = origPositions[i + 2] * (1 + morph);
             }
-            torusKnot.geometry.attributes.position.needsUpdate = true;
+            knot.geometry.attributes.position.needsUpdate = true;
 
-            // Slow rotation
-            torusKnot.rotation.y += 0.0013; // ~0.08 rad/s at 60fps
-            torusKnot.rotation.x += 0.0005; // ~0.03 rad/s at 60fps
+            knot.rotation.y = time * 0.08 + m.x * 0.15;
+            knot.rotation.x = Math.sin(time * 0.2) * 0.08 + m.y * 0.08;
+            ring.rotation.z = time * 0.05;
 
-            // --- Update constellation particles ---
-            for (var i = 0; i < constellationCount; i++) {
-                var p = particles[i];
+            // Update constellation nodes
+            for (var i = 0; i < nodeCount; i++) {
+                var p = nodes[i], v = nodeVels[i];
+                p.x += v.x;
+                p.y += v.y;
+                p.z += v.z;
 
-                // Drift
-                p.x += p.vx;
-                p.y += p.vy;
-                p.z += p.vz;
-
-                // Mouse repulsion (soft force)
-                var dx = p.x - mouseWorld.x;
-                var dy = p.y - mouseWorld.y;
-                var dz = p.z;
-                var dm = Math.sqrt(dx * dx + dy * dy + dz * dz);
-                if (dm < 4 && dm > 0.1) {
-                    var force = (1 - dm / 4) * 0.01;
-                    p.x += (dx / dm) * force;
-                    p.y += (dy / dm) * force;
+                // Mouse repulsion
+                var dx = p.x - mw.x, dy = p.y - mw.y;
+                var dm = Math.sqrt(dx * dx + dy * dy + p.z * p.z);
+                if (dm < 3 && dm > 0.1) {
+                    var f = (1 - dm / 3) * 0.01;
+                    p.x += dx / dm * f;
+                    p.y += dy / dm * f;
                 }
 
-                // Wrap around sphere boundary
-                var pr = Math.sqrt(p.x * p.x + p.y * p.y + p.z * p.z);
-                if (pr > constellationRadius) {
-                    p.x *= -0.8;
-                    p.y *= -0.8;
-                    p.z *= -0.8;
-                }
+                // Wrap boundaries
+                if (p.x > 10) p.x = -10;
+                if (p.x < -10) p.x = 10;
+                if (p.y > 8) p.y = -8;
+                if (p.y < -8) p.y = 8;
+                if (p.z > 6) p.z = -6;
+                if (p.z < -6) p.z = 6;
 
-                particlePositions[i * 3] = p.x;
-                particlePositions[i * 3 + 1] = p.y;
-                particlePositions[i * 3 + 2] = p.z;
+                nodeArr[i * 3] = p.x;
+                nodeArr[i * 3 + 1] = p.y;
+                nodeArr[i * 3 + 2] = p.z;
             }
-            particleGeo.attributes.position.needsUpdate = true;
+            nGeo.attributes.position.needsUpdate = true;
 
-            // --- Draw connection lines ---
-            var lineIndex = 0;
-            for (var i = 0; i < constellationCount && lineIndex < maxConnections; i++) {
-                for (var j = i + 1; j < constellationCount && lineIndex < maxConnections; j++) {
-                    var dx = particles[i].x - particles[j].x;
-                    var dy = particles[i].y - particles[j].y;
-                    var dz = particles[i].z - particles[j].z;
+            // Draw connection lines
+            var li = 0, connDist = 3;
+            for (var i = 0; i < nodeCount && li < maxConn; i++) {
+                for (var j = i + 1; j < nodeCount && li < maxConn; j++) {
+                    var dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y, dz = nodes[i].z - nodes[j].z;
                     var dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
-                    if (dist < connectionDist) {
-                        var alpha = 1 - dist / connectionDist;
-                        var idx = lineIndex * 6;
-
-                        linePositions[idx] = particles[i].x;
-                        linePositions[idx + 1] = particles[i].y;
-                        linePositions[idx + 2] = particles[i].z;
-                        linePositions[idx + 3] = particles[j].x;
-                        linePositions[idx + 4] = particles[j].y;
-                        linePositions[idx + 5] = particles[j].z;
-
-                        lineColors[idx] = goldR * alpha;
-                        lineColors[idx + 1] = goldG * alpha;
-                        lineColors[idx + 2] = goldB * alpha;
-                        lineColors[idx + 3] = goldR * alpha;
-                        lineColors[idx + 4] = goldG * alpha;
-                        lineColors[idx + 5] = goldB * alpha;
-
-                        lineIndex++;
+                    if (dist < connDist) {
+                        var a = 1 - dist / connDist, idx = li * 6;
+                        lArr[idx] = nodes[i].x;
+                        lArr[idx + 1] = nodes[i].y;
+                        lArr[idx + 2] = nodes[i].z;
+                        lArr[idx + 3] = nodes[j].x;
+                        lArr[idx + 4] = nodes[j].y;
+                        lArr[idx + 5] = nodes[j].z;
+                        lCol[idx] = gR * a;
+                        lCol[idx + 1] = gG * a;
+                        lCol[idx + 2] = gB * a;
+                        lCol[idx + 3] = gR * a;
+                        lCol[idx + 4] = gG * a;
+                        lCol[idx + 5] = gB * a;
+                        li++;
                     }
                 }
             }
-
-            // Zero out unused line segments
-            for (var i = lineIndex * 6; i < maxConnections * 6; i++) {
-                linePositions[i] = 0;
-                lineColors[i] = 0;
+            // Zero out unused segments
+            for (var i = li * 6; i < maxConn * 6; i++) {
+                lArr[i] = 0;
+                lCol[i] = 0;
             }
-            lineGeo.attributes.position.needsUpdate = true;
-            lineGeo.attributes.color.needsUpdate = true;
-            lineGeo.setDrawRange(0, lineIndex * 2);
+            lGeo.attributes.position.needsUpdate = true;
+            lGeo.attributes.color.needsUpdate = true;
+            lGeo.setDrawRange(0, li * 2);
 
-            // --- Ambient dust rotation ---
-            dust.rotation.y = time * 0.015;
-            dust.rotation.x = time * 0.005;
-
-            // --- Camera: mouse reactivity + scroll zoom ---
-            camera.position.x = mouse3d.x * 0.4;
-            camera.position.y = -mouse3d.y * 0.4;
-            camera.position.z = 6 - scrollProgress * 2; // 6 -> 4 on scroll
+            // Camera: mouse reactivity + scroll zoom
+            camera.position.x = m.x * 0.4;
+            camera.position.y = -m.y * 0.25;
+            camera.position.z = 6 - sp * 2;
             camera.lookAt(0, 0, 0);
 
-            // --- Scroll reactivity: fade central geometry ---
-            torusMat.opacity = Math.max(0.03, 0.08 - scrollProgress * 0.04);
+            // Scroll fade
+            knotMat.opacity = Math.max(0.02, 0.07 - sp * 0.03);
+            nMat.opacity = Math.max(0.1, 0.6 - sp * 0.25);
 
             renderer.render(scene, camera);
         }
-
         animate();
 
         // --- Resize handler ---
@@ -602,9 +607,9 @@
         });
 
     } catch (e) {
-        console.warn('Three.js 3D scene disabled:', e.message);
-        var fallbackCanvas = document.getElementById('three-canvas');
-        if (fallbackCanvas) fallbackCanvas.style.display = 'none';
+        console.warn('3D disabled:', e.message);
+        var c = document.getElementById('three-canvas');
+        if (c) c.style.display = 'none';
     }
 
 })();
