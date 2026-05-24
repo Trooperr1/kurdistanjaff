@@ -7,7 +7,7 @@
     <meta name="description" content="JaffStudio is a premium creative agency specializing in Motion Graphics, Branding, and Social Media Management. Elevating brands to extraordinary heights.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,19 +17,9 @@
         <div class="preloader-inner">
             <div class="preloader-logo-wrap">
                 <svg class="preloader-logo-svg" viewBox="0 0 200 200" width="120" height="120">
-                    <circle class="preloader-ring-1" cx="100" cy="100" r="90" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
-                    <circle class="preloader-ring-2" cx="100" cy="100" r="70" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
                     <circle class="preloader-ring-progress" cx="100" cy="100" r="90" fill="none" stroke="#c9a84c" stroke-width="1" stroke-dasharray="565.48" stroke-dashoffset="565.48" stroke-linecap="round" transform="rotate(-90 100 100)"/>
                 </svg>
                 <span class="preloader-logo-letter">J</span>
-            </div>
-            <div class="preloader-text">
-                <span class="preloader-brand">JAFFSTUDIO</span>
-                <span class="preloader-tagline">Loading Experience</span>
-            </div>
-            <div class="preloader-counter" id="preloader-counter">0</div>
-            <div class="preloader-line">
-                <div class="preloader-line-fill" id="preloader-line-fill"></div>
             </div>
         </div>
     </div>
@@ -38,29 +28,23 @@
     <canvas id="three-canvas"></canvas>
 
     <!-- Custom Cursor -->
-    <div class="cursor" id="cursor">
-        <div class="cursor-dot"></div>
-    </div>
+    <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursor-follower"></div>
-    <div class="cursor-aura" id="cursor-aura"></div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
                 <span class="logo-text">JAFF</span><span class="logo-accent">STUDIO</span>
-                <span class="logo-dot"></span>
             </a>
             <div class="nav-links">
-                <a href="#about" class="nav-link"><span class="nav-link-inner" data-text="About">About</span></a>
                 <a href="#services" class="nav-link"><span class="nav-link-inner" data-text="Services">Services</span></a>
-                <a href="#pricing" class="nav-link"><span class="nav-link-inner" data-text="Pricing">Pricing</span></a>
                 <a href="#work" class="nav-link"><span class="nav-link-inner" data-text="Work">Work</span></a>
+                <a href="#pricing" class="nav-link"><span class="nav-link-inner" data-text="Pricing">Pricing</span></a>
                 <a href="#contact" class="nav-link"><span class="nav-link-inner" data-text="Contact">Contact</span></a>
             </div>
-            <a href="#contact" class="nav-cta">
-                <span>Let's Talk</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="#contact" class="btn btn--primary nav-cta">
+                <span>Start Project</span>
             </a>
             <button class="nav-menu-btn" id="menu-btn" aria-label="Toggle menu">
                 <span></span>
@@ -75,10 +59,10 @@
         <div class="mobile-menu-bg"></div>
         <div class="mobile-menu-inner">
             <div class="mobile-menu-links">
-                <a href="#about" class="mobile-link"><span class="mobile-link-num">01</span><span class="mobile-link-text">About</span><span class="mobile-link-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-                <a href="#services" class="mobile-link"><span class="mobile-link-num">02</span><span class="mobile-link-text">Services</span><span class="mobile-link-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-                <a href="#work" class="mobile-link"><span class="mobile-link-num">03</span><span class="mobile-link-text">Work</span><span class="mobile-link-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-                <a href="#contact" class="mobile-link"><span class="mobile-link-num">04</span><span class="mobile-link-text">Contact</span><span class="mobile-link-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+                <a href="#about" class="mobile-link"><span class="mobile-link-num">01</span><span class="mobile-link-text">About</span></a>
+                <a href="#services" class="mobile-link"><span class="mobile-link-num">02</span><span class="mobile-link-text">Services</span></a>
+                <a href="#work" class="mobile-link"><span class="mobile-link-num">03</span><span class="mobile-link-text">Work</span></a>
+                <a href="#contact" class="mobile-link"><span class="mobile-link-num">04</span><span class="mobile-link-text">Contact</span></a>
             </div>
             <div class="mobile-menu-footer">
                 <div class="mobile-menu-socials">
@@ -95,14 +79,11 @@
     <section class="hero" id="hero">
         <div class="hero-content">
             <div class="hero-eyebrow">
-                <div class="hero-eyebrow-diamond"></div>
-                <span class="hero-eyebrow-text">Premium Creative Agency</span>
-                <div class="hero-eyebrow-diamond"></div>
+                <span class="hero-eyebrow-text">Creative Agency</span>
             </div>
             <h1 class="hero-title">
-                <span class="hero-title-line"><span class="hero-title-word">We Create</span></span>
-                <span class="hero-title-line"><span class="hero-title-word hero-title-italic">Extraordinary</span></span>
-                <span class="hero-title-line"><span class="hero-title-word">Experiences</span></span>
+                <span class="hero-title-line"><span class="reveal-word">We</span> <span class="reveal-word">craft</span> <span class="reveal-word">digital</span></span>
+                <span class="hero-title-line"><span class="reveal-word hero-title-italic">experiences</span></span>
             </h1>
             <p class="hero-subtitle">
                 <span class="hero-sub-word">Motion Graphics</span>
@@ -112,13 +93,8 @@
                 <span class="hero-sub-word">Social Media</span>
             </p>
             <div class="hero-cta">
-                <a href="#contact" class="btn-primary magnetic">
-                    <span class="btn-bg"></span>
-                    <span class="btn-text">Start a Project</span>
-                    <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a>
-                <a href="#work" class="btn-outline magnetic">
-                    <span class="btn-text">View Our Work</span>
+                <a href="#work" class="btn btn--primary">
+                    <span>Explore Our Work</span>
                 </a>
             </div>
         </div>
@@ -129,83 +105,41 @@
             </div>
             <span>Scroll</span>
         </div>
-
-        <div class="hero-marquee">
-            <div class="marquee-track">
-                <span class="marquee-item">Motion Graphics</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Branding</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Social Media</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Motion Graphics</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Branding</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Social Media</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Motion Graphics</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Branding</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Social Media</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Motion Graphics</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Branding</span>
-                <span class="marquee-dot"></span>
-                <span class="marquee-item">Social Media</span>
-                <span class="marquee-dot"></span>
-            </div>
-        </div>
-
-        <div class="hero-side-text hero-side-left">JaffStudio &copy; 2026</div>
-        <div class="hero-side-text hero-side-right">Kurdistan, Iraq</div>
     </section>
-
-    <!-- Horizontal Divider -->
-    <div class="section-divider">
-        <div class="divider-line"></div>
-        <div class="divider-diamond"></div>
-        <div class="divider-line"></div>
-    </div>
 
     <!-- About Section -->
     <section class="about section" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-left">
-                    <div class="section-label" data-animation="fade-up">
+                    <div class="section-label" data-animation="fade">
                         <span class="section-num">01</span>
                         <span class="section-label-line"></span>
-                        <span class="section-label-text">About Us</span>
+                        <span class="section-label-text">About</span>
                     </div>
-                    <h2 class="about-title" data-animation="split-lines">
-                        Crafting visual
-                        <em>masterpieces</em>
-                        that transcend
-                        the ordinary
+                    <h2 class="about-title" data-animation="fade">
+                        Where vision meets <em>precision</em>
                     </h2>
                 </div>
                 <div class="about-right">
-                    <p class="about-text" data-animation="fade-up">
-                        At JaffStudio, we don't just design — we architect experiences that resonate with the soul of your brand. Every pixel is intentional. Every motion tells a story. Every strategy is crafted to dominate.
+                    <p class="about-text">
+                        We are a collective of designers, strategists, and storytellers who believe every brand deserves to be extraordinary. Every pixel is intentional, every motion tells a story.
                     </p>
-                    <p class="about-text" data-animation="fade-up">
-                        We are a collective of visionaries, strategists, and artists who believe that exceptional brands deserve nothing less than perfection. Based in Kurdistan, serving the world.
+                    <p class="about-text">
+                        Based in Kurdistan and serving clients worldwide, we merge cultural depth with global design standards to create work that resonates.
                     </p>
-                    <div class="about-stats" data-animation="fade-up">
+                    <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number" data-count="150">0</span><span class="stat-plus">+</span>
-                            <span class="stat-label">Projects Delivered</span>
+                            <span class="stat-label">Projects</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
-                            <span class="stat-label">Global Clients</span>
+                            <span class="stat-label">Clients</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number" data-count="5">0</span>
-                            <span class="stat-label">Years of Excellence</span>
+                            <span class="stat-label">Years</span>
                         </div>
                     </div>
                 </div>
@@ -217,103 +151,48 @@
     <section class="services section" id="services">
         <div class="container">
             <div class="section-header">
-                <div class="section-label" data-animation="fade-up">
+                <div class="section-label" data-animation="fade">
                     <span class="section-num">02</span>
                     <span class="section-label-line"></span>
-                    <span class="section-label-text">Our Services</span>
+                    <span class="section-label-text">Services</span>
                 </div>
-                <h2 class="section-title" data-animation="split-lines">
-                    Three pillars of
-                    <em>creative excellence</em>
+                <h2 class="section-title" data-animation="fade">
+                    What we <em>do</em>
                 </h2>
             </div>
 
             <div class="services-grid">
-                <!-- Service 1: Motion Graphics -->
-                <div class="service-card" data-animation="fade-up" data-service="motion">
-                    <div class="service-card-glow"></div>
-                    <div class="service-card-border"></div>
-                    <div class="service-header">
-                        <div class="service-icon-wrap">
-                            <div class="service-icon-bg"></div>
-                            <svg class="service-icon" width="32" height="32" viewBox="0 0 48 48" fill="none">
-                                <path d="M6 12L6 36C6 38.2091 7.79086 40 10 40H38C40.2091 40 42 38.2091 42 36V12C42 9.79086 40.2091 8 38 8H10C7.79086 8 6 9.79086 6 12Z" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M20 18L32 24L20 30V18Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <span class="service-number">01</span>
+                <div class="glass-card">
+                    <div class="service-icon-wrap">
+                        <svg class="service-icon" width="32" height="32" viewBox="0 0 48 48" fill="none">
+                            <path d="M6 12L6 36C6 38.2091 7.79086 40 10 40H38C40.2091 40 42 38.2091 42 36V12C42 9.79086 40.2091 8 38 8H10C7.79086 8 6 9.79086 6 12Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M20 18L32 24L20 30V18Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-                    <h3 class="service-title">Motion<br>Graphics</h3>
-                    <p class="service-desc">Cinematic animations and motion design that captivate audiences. From brand films to product visualizations — every frame is a work of art.</p>
-                    <ul class="service-list">
-                        <li><span class="service-list-dot"></span>Brand Animation</li>
-                        <li><span class="service-list-dot"></span>Explainer Videos</li>
-                        <li><span class="service-list-dot"></span>3D Motion Design</li>
-                        <li><span class="service-list-dot"></span>Visual Effects</li>
-                        <li><span class="service-list-dot"></span>Title Sequences</li>
-                    </ul>
-                    <div class="service-cta magnetic">
-                        <span>Explore</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
+                    <h3 class="service-title">Motion Graphics</h3>
+                    <p class="service-desc">Cinematic animations and motion design that captivate audiences and bring your brand story to life.</p>
                 </div>
 
-                <!-- Service 2: Branding -->
-                <div class="service-card" data-animation="fade-up" data-delay="0.15" data-service="branding">
-                    <div class="service-card-glow"></div>
-                    <div class="service-card-border"></div>
-                    <div class="service-header">
-                        <div class="service-icon-wrap">
-                            <div class="service-icon-bg"></div>
-                            <svg class="service-icon" width="32" height="32" viewBox="0 0 48 48" fill="none">
-                                <path d="M24 4L28.9 16.2L42 17.8L32 27.1L34.8 40L24 33.8L13.2 40L16 27.1L6 17.8L19.1 16.2L24 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <span class="service-number">02</span>
+                <div class="glass-card">
+                    <div class="service-icon-wrap">
+                        <svg class="service-icon" width="32" height="32" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L28.9 16.2L42 17.8L32 27.1L34.8 40L24 33.8L13.2 40L16 27.1L6 17.8L19.1 16.2L24 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-                    <h3 class="service-title">Brand<br>Identity</h3>
-                    <p class="service-desc">We build brands that command attention and inspire loyalty. Strategic identity design that positions you at the pinnacle of your industry.</p>
-                    <ul class="service-list">
-                        <li><span class="service-list-dot"></span>Logo Design</li>
-                        <li><span class="service-list-dot"></span>Visual Identity Systems</li>
-                        <li><span class="service-list-dot"></span>Brand Strategy</li>
-                        <li><span class="service-list-dot"></span>Packaging Design</li>
-                        <li><span class="service-list-dot"></span>Brand Guidelines</li>
-                    </ul>
-                    <div class="service-cta magnetic">
-                        <span>Explore</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
+                    <h3 class="service-title">Brand Identity</h3>
+                    <p class="service-desc">Strategic identity systems that command attention and position you at the pinnacle of your industry.</p>
                 </div>
 
-                <!-- Service 3: Social Media -->
-                <div class="service-card" data-animation="fade-up" data-delay="0.3" data-service="social">
-                    <div class="service-card-glow"></div>
-                    <div class="service-card-border"></div>
-                    <div class="service-header">
-                        <div class="service-icon-wrap">
-                            <div class="service-icon-bg"></div>
-                            <svg class="service-icon" width="32" height="32" viewBox="0 0 48 48" fill="none">
-                                <rect x="6" y="6" width="36" height="36" rx="8" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="36" cy="12" r="3" fill="currentColor" opacity="0.5"/>
-                            </svg>
-                        </div>
-                        <span class="service-number">03</span>
+                <div class="glass-card">
+                    <div class="service-icon-wrap">
+                        <svg class="service-icon" width="32" height="32" viewBox="0 0 48 48" fill="none">
+                            <rect x="6" y="6" width="36" height="36" rx="8" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="36" cy="12" r="3" fill="currentColor" opacity="0.5"/>
+                        </svg>
                     </div>
-                    <h3 class="service-title">Social Media<br>Management</h3>
-                    <p class="service-desc">Strategic social presence that turns followers into fanatics. Data-driven content strategies that amplify your voice across every platform.</p>
-                    <ul class="service-list">
-                        <li><span class="service-list-dot"></span>Content Strategy</li>
-                        <li><span class="service-list-dot"></span>Community Management</li>
-                        <li><span class="service-list-dot"></span>Paid Campaigns</li>
-                        <li><span class="service-list-dot"></span>Analytics & Growth</li>
-                        <li><span class="service-list-dot"></span>Influencer Partnerships</li>
-                    </ul>
-                    <div class="service-cta magnetic">
-                        <span>Explore</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
+                    <h3 class="service-title">Social Media</h3>
+                    <p class="service-desc">Data-driven content strategies and community management that turn followers into loyal advocates.</p>
                 </div>
             </div>
         </div>
@@ -323,28 +202,24 @@
     <section class="pricing section" id="pricing">
         <div class="container">
             <div class="section-header section-header-center">
-                <div class="section-label" data-animation="fade-up">
+                <div class="section-label" data-animation="fade">
                     <span class="section-num">03</span>
                     <span class="section-label-line"></span>
                     <span class="section-label-text">Pricing</span>
                 </div>
-                <h2 class="section-title" data-animation="split-lines">
-                    Flexible packages for <em>every vision</em>
+                <h2 class="section-title" data-animation="fade">
+                    <em>Investment</em>
                 </h2>
-                <p class="pricing-subtitle" data-animation="fade-up">Choose the package that fits your needs. Every project includes full ownership of all deliverables.</p>
             </div>
 
             <div class="pricing-grid">
                 <!-- Starter -->
-                <div class="pricing-card" data-animation="fade-up">
-                    <div class="pricing-card-glow"></div>
-                    <div class="pricing-card-border"></div>
+                <div class="glass-card">
                     <div class="pricing-tier">Starter</div>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>
                         <span class="pricing-amount">497</span>
                     </div>
-                    <p class="pricing-desc">Perfect for small businesses and startups looking to establish their brand presence.</p>
                     <ul class="pricing-features">
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1 Service of Choice</li>
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2-4 Weeks Delivery</li>
@@ -352,22 +227,19 @@
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1 Month Free Support</li>
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Full Asset Ownership</li>
                     </ul>
-                    <a href="#contact" class="btn-outline pricing-btn magnetic">
-                        <span class="btn-text">Get Started</span>
+                    <a href="#contact" class="btn btn--ghost">
+                        <span>Get Started</span>
                     </a>
                 </div>
 
                 <!-- Professional -->
-                <div class="pricing-card pricing-card-featured" data-animation="fade-up" data-delay="0.15">
-                    <div class="pricing-card-glow"></div>
-                    <div class="pricing-card-border"></div>
-                    <div class="pricing-badge">Most Popular</div>
+                <div class="glass-card glass-card--featured">
+                    <div class="pricing-badge">Popular</div>
                     <div class="pricing-tier">Professional</div>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>
                         <span class="pricing-amount">1,297</span>
                     </div>
-                    <p class="pricing-desc">For growing brands that need comprehensive creative solutions across multiple channels.</p>
                     <ul class="pricing-features">
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2 Services of Choice</li>
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>4-8 Weeks Delivery</li>
@@ -376,106 +248,28 @@
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Full Asset Ownership</li>
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority Support</li>
                     </ul>
-                    <a href="#contact" class="btn-primary pricing-btn magnetic">
-                        <span class="btn-bg"></span>
-                        <span class="btn-text">Get Started</span>
-                        <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <a href="#contact" class="btn btn--primary">
+                        <span>Get Started</span>
                     </a>
                 </div>
 
                 <!-- Enterprise -->
-                <div class="pricing-card" data-animation="fade-up" data-delay="0.3">
-                    <div class="pricing-card-glow"></div>
-                    <div class="pricing-card-border"></div>
+                <div class="glass-card">
                     <div class="pricing-tier">Enterprise</div>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>
                         <span class="pricing-amount">2,997</span>
                     </div>
-                    <p class="pricing-desc">Full creative suite for established brands demanding excellence across every touchpoint.</p>
                     <ul class="pricing-features">
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>All 3 Services Included</li>
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>8-12 Weeks Delivery</li>
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited Revisions</li>
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>6 Months Free Support</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Full Asset Ownership</li>
                         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated Account Manager</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Strategy Consultation</li>
                     </ul>
-                    <a href="#contact" class="btn-outline pricing-btn magnetic">
-                        <span class="btn-text">Contact Us</span>
+                    <a href="#contact" class="btn btn--ghost">
+                        <span>Contact Us</span>
                     </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Big Text Marquee -->
-    <div class="big-marquee">
-        <div class="big-marquee-track">
-            <span>MOTION</span>
-            <span class="big-marquee-outline">GRAPHICS</span>
-            <span class="big-marquee-dot"></span>
-            <span>BRAND</span>
-            <span class="big-marquee-outline">IDENTITY</span>
-            <span class="big-marquee-dot"></span>
-            <span>SOCIAL</span>
-            <span class="big-marquee-outline">MEDIA</span>
-            <span class="big-marquee-dot"></span>
-            <span>MOTION</span>
-            <span class="big-marquee-outline">GRAPHICS</span>
-            <span class="big-marquee-dot"></span>
-            <span>BRAND</span>
-            <span class="big-marquee-outline">IDENTITY</span>
-            <span class="big-marquee-dot"></span>
-            <span>SOCIAL</span>
-            <span class="big-marquee-outline">MEDIA</span>
-            <span class="big-marquee-dot"></span>
-        </div>
-    </div>
-
-    <!-- Process Section -->
-    <section class="process section" id="process">
-        <div class="container">
-            <div class="section-header section-header-center">
-                <div class="section-label" data-animation="fade-up">
-                    <span class="section-num">03</span>
-                    <span class="section-label-line"></span>
-                    <span class="section-label-text">Our Process</span>
-                </div>
-                <h2 class="section-title" data-animation="split-lines">
-                    From vision to <em>reality</em>
-                </h2>
-            </div>
-            <div class="process-timeline">
-                <div class="process-line"><div class="process-line-fill"></div></div>
-                <div class="process-step" data-animation="fade-up">
-                    <div class="process-step-marker"><span>01</span></div>
-                    <div class="process-step-content">
-                        <h3>Discovery</h3>
-                        <p>Deep-dive into your brand's DNA. We listen, research, and uncover the essence that makes you unique.</p>
-                    </div>
-                </div>
-                <div class="process-step" data-animation="fade-up" data-delay="0.1">
-                    <div class="process-step-marker"><span>02</span></div>
-                    <div class="process-step-content">
-                        <h3>Strategy</h3>
-                        <p>Blueprint for brilliance. We map out every detail, from creative direction to execution timeline.</p>
-                    </div>
-                </div>
-                <div class="process-step" data-animation="fade-up" data-delay="0.2">
-                    <div class="process-step-marker"><span>03</span></div>
-                    <div class="process-step-content">
-                        <h3>Creation</h3>
-                        <p>Where magic happens. Our artists and strategists bring your vision to life with meticulous precision.</p>
-                    </div>
-                </div>
-                <div class="process-step" data-animation="fade-up" data-delay="0.3">
-                    <div class="process-step-marker"><span>04</span></div>
-                    <div class="process-step-content">
-                        <h3>Launch</h3>
-                        <p>Unleash your brand upon the world. We ensure flawless delivery and measure every impact.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -485,74 +279,42 @@
     <section class="work section" id="work">
         <div class="container">
             <div class="section-header">
-                <div class="section-label" data-animation="fade-up">
+                <div class="section-label" data-animation="fade">
                     <span class="section-num">04</span>
                     <span class="section-label-line"></span>
-                    <span class="section-label-text">Selected Work</span>
+                    <span class="section-label-text">Work</span>
                 </div>
-                <h2 class="section-title" data-animation="split-lines">
-                    Featured <em>projects</em>
+                <h2 class="section-title" data-animation="fade">
+                    Selected <em>projects</em>
                 </h2>
             </div>
             <div class="work-grid">
-                <div class="work-item work-item-large" data-animation="fade-up">
-                    <div class="work-item-inner magnetic">
-                        <div class="work-item-bg" style="background: linear-gradient(135deg, #0a0a1a 0%, #16213e 40%, #0f3460 70%, #c9a84c22 100%);"></div>
-                        <div class="work-item-content">
-                            <span class="work-category">Motion Graphics</span>
-                            <h3 class="work-title">Ethereal<br>Brand Film</h3>
-                            <p class="work-desc">Cinematic brand story for a luxury fashion house</p>
-                        </div>
-                        <div class="work-item-overlay"></div>
-                        <div class="work-item-shine"></div>
+                <div class="work-card">
+                    <div class="work-card-bg" style="background: linear-gradient(135deg, #0a0a1a 0%, #16213e 40%, #0f3460 100%);"></div>
+                    <div class="work-card-content">
+                        <span class="work-category">Motion Graphics</span>
+                        <h3 class="work-title">Ethereal Brand Film</h3>
                     </div>
                 </div>
-                <div class="work-item" data-animation="fade-up" data-delay="0.1">
-                    <div class="work-item-inner magnetic">
-                        <div class="work-item-bg" style="background: linear-gradient(135deg, #1a0a2e 0%, #2d1b69 50%, #11998e 100%);"></div>
-                        <div class="work-item-content">
-                            <span class="work-category">Branding</span>
-                            <h3 class="work-title">Aura<br>Identity</h3>
-                            <p class="work-desc">Complete rebrand for a tech startup</p>
-                        </div>
-                        <div class="work-item-overlay"></div>
-                        <div class="work-item-shine"></div>
+                <div class="work-card">
+                    <div class="work-card-bg" style="background: linear-gradient(135deg, #1a0a2e 0%, #2d1b69 50%, #11998e 100%);"></div>
+                    <div class="work-card-content">
+                        <span class="work-category">Branding</span>
+                        <h3 class="work-title">Aura Identity System</h3>
                     </div>
                 </div>
-                <div class="work-item" data-animation="fade-up" data-delay="0.2">
-                    <div class="work-item-inner magnetic">
-                        <div class="work-item-bg" style="background: linear-gradient(135deg, #1a0a2e 0%, #834d9b 50%, #d04ed6 100%);"></div>
-                        <div class="work-item-content">
-                            <span class="work-category">Social Media</span>
-                            <h3 class="work-title">Pulse<br>Campaign</h3>
-                            <p class="work-desc">Social strategy that drove 500% growth</p>
-                        </div>
-                        <div class="work-item-overlay"></div>
-                        <div class="work-item-shine"></div>
+                <div class="work-card">
+                    <div class="work-card-bg" style="background: linear-gradient(135deg, #1a0a2e 0%, #834d9b 50%, #d04ed6 100%);"></div>
+                    <div class="work-card-content">
+                        <span class="work-category">Social Media</span>
+                        <h3 class="work-title">Pulse Campaign</h3>
                     </div>
                 </div>
-                <div class="work-item work-item-wide" data-animation="fade-up">
-                    <div class="work-item-inner magnetic">
-                        <div class="work-item-bg" style="background: linear-gradient(135deg, #050505 0%, #1a1a1a 40%, #c9a84c33 100%);"></div>
-                        <div class="work-item-content">
-                            <span class="work-category">Branding + Motion</span>
-                            <h3 class="work-title">Royal Heritage Collection</h3>
-                            <p class="work-desc">Full creative suite for a luxury heritage brand</p>
-                        </div>
-                        <div class="work-item-overlay"></div>
-                        <div class="work-item-shine"></div>
-                    </div>
-                </div>
-                <div class="work-item" data-animation="fade-up" data-delay="0.1">
-                    <div class="work-item-inner magnetic">
-                        <div class="work-item-bg" style="background: linear-gradient(135deg, #0a0a1a 0%, #162447 50%, #e43f5a 100%);"></div>
-                        <div class="work-item-content">
-                            <span class="work-category">Motion Graphics</span>
-                            <h3 class="work-title">Neon<br>Horizons</h3>
-                            <p class="work-desc">Product launch animation series</p>
-                        </div>
-                        <div class="work-item-overlay"></div>
-                        <div class="work-item-shine"></div>
+                <div class="work-card">
+                    <div class="work-card-bg" style="background: linear-gradient(135deg, #050505 0%, #1a1a1a 40%, #c9a84c33 100%);"></div>
+                    <div class="work-card-content">
+                        <span class="work-category">Branding + Motion</span>
+                        <h3 class="work-title">Royal Heritage Collection</h3>
                     </div>
                 </div>
             </div>
@@ -563,16 +325,16 @@
     <section class="testimonials section" id="testimonials">
         <div class="container">
             <div class="section-header section-header-center">
-                <div class="section-label" data-animation="fade-up">
+                <div class="section-label" data-animation="fade">
                     <span class="section-num">05</span>
                     <span class="section-label-line"></span>
                     <span class="section-label-text">Testimonials</span>
                 </div>
-                <h2 class="section-title" data-animation="split-lines">
-                    Words from those <em>we've elevated</em>
+                <h2 class="section-title" data-animation="fade">
+                    Client <em>voices</em>
                 </h2>
             </div>
-            <div class="testimonials-slider" data-animation="fade-up">
+            <div class="testimonials-slider">
                 <div class="testimonial active" id="testimonial-1">
                     <div class="testimonial-stars">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="#c9a84c"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -638,20 +400,18 @@
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-left">
-                    <div class="section-label" data-animation="fade-up">
+                    <div class="section-label" data-animation="fade">
                         <span class="section-num">06</span>
                         <span class="section-label-line"></span>
-                        <span class="section-label-text">Get in Touch</span>
+                        <span class="section-label-text">Contact</span>
                     </div>
-                    <h2 class="contact-title" data-animation="split-lines">
-                        Let's create
-                        something
-                        <em>legendary</em>
+                    <h2 class="contact-title" data-animation="fade">
+                        Let's <em>talk</em>
                     </h2>
-                    <p class="contact-text" data-animation="fade-up">
-                        Ready to elevate your brand? We're here to turn your vision into an unforgettable reality.
+                    <p class="contact-text">
+                        Ready to elevate your brand? We're here to turn your vision into reality.
                     </p>
-                    <div class="contact-info" data-animation="fade-up">
+                    <div class="contact-info">
                         <div class="contact-info-item">
                             <span class="contact-info-label">Email</span>
                             <a href="mailto:hello@jaffstudio.com" class="contact-info-value">hello@jaffstudio.com</a>
@@ -661,53 +421,45 @@
                             <span class="contact-info-value">Kurdistan, Iraq</span>
                         </div>
                         <div class="contact-info-item">
-                            <span class="contact-info-label">Follow Us</span>
+                            <span class="contact-info-label">Social</span>
                             <div class="contact-socials">
-                                <a href="#" class="social-link magnetic" aria-label="Instagram">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="6" r="1.5" fill="currentColor"/></svg>
-                                </a>
-                                <a href="#" class="social-link magnetic" aria-label="Behance">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12H10C11.1046 12 12 11.1046 12 10V8C12 6.89543 11.1046 6 10 6H3V12ZM3 12H11C12.1046 12 13 12.8954 13 14V16C13 17.1046 12.1046 18 11 18H3V12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M15 5H21" stroke="currentColor" stroke-width="1.5"/></svg>
-                                </a>
-                                <a href="#" class="social-link magnetic" aria-label="LinkedIn">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 10V17M7 7V7.01M11 17V13C11 11.8954 11.8954 11 13 11C14.1046 11 15 11.8954 15 13V17M11 10V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                                </a>
+                                <a href="#">Instagram</a>
+                                <a href="#">Behance</a>
+                                <a href="#">LinkedIn</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="contact-right" data-animation="fade-up">
+                <div class="contact-right">
                     <form class="contact-form" id="contact-form" novalidate>
                         <div class="form-group">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
                             <div class="form-line"></div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="form-label">Your Email</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
                             <div class="form-line"></div>
                         </div>
                         <div class="form-group">
-                            <label for="service" class="form-label">Service Interested In</label>
+                            <label for="service" class="form-label">Service</label>
                             <select id="service" name="service" class="form-input form-select" required>
                                 <option value="" disabled selected>Select a service</option>
                                 <option value="motion">Motion Graphics</option>
                                 <option value="branding">Branding</option>
-                                <option value="social">Social Media Management</option>
+                                <option value="social">Social Media</option>
                                 <option value="all">Full Creative Suite</option>
                             </select>
                             <div class="form-line"></div>
                         </div>
                         <div class="form-group">
-                            <label for="message" class="form-label">Tell Us About Your Vision</label>
-                            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Describe your project..." rows="4" required></textarea>
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us about your project..." rows="4" required></textarea>
                             <div class="form-line"></div>
                         </div>
-                        <button type="submit" class="btn-primary btn-full magnetic">
-                            <span class="btn-bg"></span>
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <button type="submit" class="btn btn--primary btn-full">
+                            <span>Send Message</span>
                         </button>
                     </form>
                 </div>
@@ -718,15 +470,6 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-cta" data-animation="fade-up">
-                <h3 class="footer-cta-title">Ready to <em>elevate</em> your brand?</h3>
-                <a href="#contact" class="btn-primary magnetic">
-                    <span class="btn-bg"></span>
-                    <span class="btn-text">Get Started</span>
-                    <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                </a>
-            </div>
-            <div class="footer-divider"></div>
             <div class="footer-grid">
                 <div class="footer-brand-col">
                     <div class="footer-brand">
@@ -735,7 +478,7 @@
                     <p class="footer-tagline">Elevating brands beyond imagination</p>
                 </div>
                 <div class="footer-nav-col">
-                    <h4>Navigation</h4>
+                    <h4>Pages</h4>
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
                     <a href="#work">Work</a>
@@ -748,7 +491,7 @@
                     <a href="#services">Social Media</a>
                 </div>
                 <div class="footer-connect-col">
-                    <h4>Connect</h4>
+                    <h4>Social</h4>
                     <a href="#">Instagram</a>
                     <a href="#">Behance</a>
                     <a href="#">LinkedIn</a>
